@@ -1,10 +1,14 @@
 ''' Script for counting n-grams in a corpus & saving it in json format.
 
-I may later add another, weirder format to cut down the file size
-as much as possible.  It depends.
+I may later add another, custom text format to cut down the file size
+as much as possible.
 
-Why is this in Python and not JS if the rest of the project is going
-to be JS?  I don't know, I guess I'm just a creature of habit.'''
+This is in Python rather than JS simply because I prefer Python for
+string/text handling stuff like this.  This is a bit unusual for a mostly
+JS project, I guess, but I've at least kept it dependency-free
+so you don't have to worry about installing npm dependencies AND 
+pip dependencies.'''
+
 from collections import Counter
 import json
 
