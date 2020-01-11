@@ -4,7 +4,7 @@
   "description": "Character-level ngram-based language modeling",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "browser": "browserify src/index.js > \"dist/lingthing-browser-\"$npm_package_version\".js\""
   },
   "repository": {
     "type": "git",
@@ -16,11 +16,14 @@
     "language",
     "model"
   ],
-  "private":true,
+  "private": true,
   "author": "Avery Hiebert",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/averyhiebert/lingthing/issues"
   },
-  "homepage": "https://github.com/averyhiebert/lingthing#readme"
+  "homepage": "https://github.com/averyhiebert/lingthing#readme",
+  "devDependencies": {
+    "browserify": "^16.5.0"
+  }
 }
