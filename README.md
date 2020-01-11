@@ -17,12 +17,6 @@ maybe other smoothing options in the future if we're lucky).
 
 `npm install lingthing`
 
-## Building
-To build the browser-friendly distribution, run `npm install` to
-install dev-dependencies, and then run `npm run-script browser`.
-
-The bundled file will appear in the `dist` directory.
-
 ## Usage Examples:
 In Node:
 ```javascript
@@ -59,4 +53,10 @@ In the browser:
         + Math.exp(log_probability));
 </script>
 ```
+
+## Build:
+To build the browser-friendly distribution, run `npm install` to
+install dev-dependencies, and then run `npm run-script browser`.
+
+The bundled file will appear in the `dist` directory.
 
