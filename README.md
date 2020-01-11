@@ -4,16 +4,16 @@ A library for n-gram-based character-level language modeling in JavaScript,
 intended for use in the browser.
 
 A json file containing counts of n-grams in some training corpus can be
-created using the script `scripts/count_grams.py` (or you can use the
-example based on the Lancaster-Oslo-Bergen corpus, in 
-`scripts/LOB_ngrams.json`).  This can then be
+created using the script `scripts/count_grams.py` (or you can use my
+example based on the Lancaster-Oslo/Bergen corpus, in 
+`scripts/LOB_ngrams.json`).
+
+The resulting json data can then be
 used, along with the `lingthing.log_prob` function, to estimate
 the (log) probability of a string (with Laplace smoothing applied, and
-possibly other smoothing options in the future).
+maybe other smoothing options in the future if we're lucky).
 
-This package is a work-in-progress.
-
-## Usage
+## Usage Examples:
 In Node:
 ```javascript
 const lt = require('lingthing');
@@ -32,38 +32,36 @@ console.log("Probability of sentence '" + test_sentence + "' is "
 
 In the browser:
 ```html
-    <script src="lingthing-browser-0.0.1.js"></script>
-    <script src="ngrams.js"></script> <!-- Or load the JSON data however you
-        want, e.g. XMLHttpRequest  -->
-    <script type="text/javascript">
-        // Note: importing the browser script is equivalent to:
-        // var lingthing = require('lingthing');
+<script src="lingthing-browser-0.0.1.js"></script>
+<script src="ngrams.js"></script> <!-- Or load the JSON data however you
+    want, e.g. XMLHttpRequest  -->
+<script type="text/javascript">
+    // Note: importing the browser script is equivalent to:
+    // var lingthing = require('lingthing');
 
-        test_sentence = "Test sentence."
-        info = lingthing.corpus_info(counts)
-        log_probability = lingthing.log_prob(test_sentence,counts,"laplace",
-            info.n,info.d,info.N);
+    test_sentence = "Test sentence."
+    info = lingthing.corpus_info(counts)
+    log_probability = lingthing.log_prob(test_sentence,counts,"laplace",
+        info.n,info.d,info.N);
 
-        console.log("Probability of sentence '" + test_sentence + "' is " 
-            + Math.exp(log_probability));
-    </script>
+    console.log("Probability of sentence '" + test_sentence + "' is " 
+        + Math.exp(log_probability));
+</script>
 ```
 
 ## Building
 To build the browser-friendly distribution, run `npm install` to
-install dev-dependencies, and then run `npm run-script browser` to build
-the actual file (which will appear in the `dist` directory).
+install dev-dependencies, and then run `npm run-script browser`.
 
-## Related packages / alternatives
-The most relevant existing npm packages I can find are:
+The bundled file will appear in the `dist` directory.
 
-`markovian-nlp`: Word-level language modeling, apparently mostly focused on text generation.
+## Other semi-related packages/alternatives:
+If this isn't what you're looking for, you might instead be interested in:
 
-`languagemodel`: Unigram-based cross-lingual language model.
+`markovian-nlp`: Word-level language modeling, probably more heavily focused on text generation.
 
-`kn`: Word-level model using Kneser-Ney smoothing, which is probably the closest to what I'm looking for, but it doesn't look very convenient to use.
+`languagemodel`: Unigram-based cross-lingual language model of some sort.
+
+`kn`: Word-level model using Kneser-Ney smoothing.
 
 `natural`: Lots of general NLP stuff, including counting word n-grams, but no character-level n-gram language modeling specifically.
-
-None of these packages does quite what I want (probably for a good
-reason).
