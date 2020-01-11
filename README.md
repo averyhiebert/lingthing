@@ -1,4 +1,4 @@
-# ⚡lingthing 
+# ⚡lingthing⚡
 
 A library for n-gram-based character-level language modeling in JavaScript,
 intended for use in the browser.
