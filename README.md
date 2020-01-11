@@ -11,6 +11,12 @@ possibly other smoothing options in the future).
 
 This package is a work-in-progress.
 
+
+## Building
+To build the browser-friendly distribution, run `npm install` to
+install dev-dependencies, and then run `npm run-script browser` to build
+the actual file (which will appear in the `dist` directory).
+
 ## Related packages / alternatives
 The most relevant existing npm packages I can find are:
 

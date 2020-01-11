@@ -16,6 +16,16 @@ function corpus_size(counts){
         .reduce((a,b) => a + counts[b],0);
 }
 
+function corpus_info(counts){
+    /* Get the n, d, and N values (described elsewhere, in e.g. log_prob) 
+    for a corpus. */
+    return {
+        n: check_n(counts),
+        d: check_d(counts),
+        N: corpus_size(counts)
+    };
+}
+
 function ngram_laplace_prob(ngram, counts, d, N){
     /* Given an ngram, an object containing ngram counts, a number d
     of distinct possible unigrams, and a number N of total observed
@@ -42,6 +52,8 @@ function log_prob(sentence,counts,smoothing,n,d,N){
     distinct characters in the corpus, and N for the total number of
     characters in the corpus, but these are also optional, to avoid
     some unnecessary computation.
+
+    The values n, d, and N can be obtained using the function corpus_info.
 
     If smoothing == 'laplace', then Laplace (add 1) smoothing is used.
     This is currently the only smoothing option, but I plan
@@ -73,5 +85,6 @@ function log_prob(sentence,counts,smoothing,n,d,N){
 
 
 module.exports = {
-    log_prob: log_prob
+    log_prob: log_prob,
+    corpus_info: corpus_info
 }
