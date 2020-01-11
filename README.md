@@ -4,7 +4,7 @@ A library for n-gram-based character-level language modeling in JavaScript,
 intended for use in the browser.
 
 A json file containing counts of n-grams in some training corpus can be
-created using the script `scripts/count_grams.py'.  This can then be
+created using the script `scripts/count_grams.py`.  This can then be
 used, along with the `lingthing.log_prob` function, to estimate
 the (log) probability of a string (with Laplace smoothing applied, and
 possibly other smoothing options in the future).
