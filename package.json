@@ -1,0 +1,26 @@
+{
+  "name": "lingthing",
+  "version": "0.0.1",
+  "description": "Character-level ngram-based language modeling",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/averyhiebert/lingthing.git"
+  },
+  "keywords": [
+    "nlp",
+    "lm",
+    "language",
+    "model"
+  ],
+  "private":true,
+  "author": "Avery Hiebert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/averyhiebert/lingthing/issues"
+  },
+  "homepage": "https://github.com/averyhiebert/lingthing#readme"
+}

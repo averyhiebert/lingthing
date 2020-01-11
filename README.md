@@ -11,7 +11,7 @@ possibly other smoothing options in the future).
 
 This entire package is a work-in-progress.
 
-## Comparable packages
+## Related packages / alternatives
 The most relevant existing npm packages I can find are:
 
 `markovian-nlp`: Word-level language modeling, apparently mostly focused on text generation.
@@ -20,4 +20,4 @@ The most relevant existing npm packages I can find are:
 `natural`: Lots of general NLP stuff, including counting word n-grams, but no character-level n-gram language modeling specifically.
 
 As you can see, none of these does quite what I want (probably for a good
-reason, to be honest).
+reason).
