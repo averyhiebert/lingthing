@@ -16,7 +16,7 @@
     "language",
     "model"
   ],
-  "private": true,
+  "private": false,
   "author": "Avery Hiebert",
   "license": "MIT",
   "bugs": {
