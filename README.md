@@ -13,6 +13,16 @@ used, along with the `lingthing.log_prob` function, to estimate
 the (log) probability of a string (with Laplace smoothing applied, and
 maybe other smoothing options in the future if we're lucky).
 
+## Installation:
+
+`npm install lingthing`
+
+## Building
+To build the browser-friendly distribution, run `npm install` to
+install dev-dependencies, and then run `npm run-script browser`.
+
+The bundled file will appear in the `dist` directory.
+
 ## Usage Examples:
 In Node:
 ```javascript
@@ -50,19 +60,3 @@ In the browser:
 </script>
 ```
 
-## Building
-To build the browser-friendly distribution, run `npm install` to
-install dev-dependencies, and then run `npm run-script browser`.
-
-The bundled file will appear in the `dist` directory.
-
-## Other semi-related packages/alternatives:
-If this isn't what you're looking for, you might instead be interested in:
-
-`markovian-nlp`: Word-level language modeling, probably more heavily focused on text generation.
-
-`languagemodel`: Unigram-based cross-lingual language model of some sort.
-
-`kn`: Word-level model using Kneser-Ney smoothing.
-
-`natural`: Lots of general NLP stuff, including counting word n-grams, but no character-level n-gram language modeling specifically.
