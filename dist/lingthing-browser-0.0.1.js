@@ -1,4 +1,4 @@
-(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.lingthing = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 function check_n(counts){
     /* Given an object representing corpus counts of various n-grams,
     check what the largest 'n' value included is. */
@@ -15,6 +15,16 @@ function corpus_size(counts){
     /* Check total number of characters in corpus. */
     return Object.keys(counts).filter(x => x.length == 1)
         .reduce((a,b) => a + counts[b],0);
+}
+
+function corpus_info(counts){
+    /* Get the n, d, and N values (described elsewhere, in e.g. log_prob) 
+    for a corpus. */
+    return {
+        n: check_n(counts),
+        d: check_d(counts),
+        N: corpus_size(counts)
+    };
 }
 
 function ngram_laplace_prob(ngram, counts, d, N){
@@ -43,6 +53,8 @@ function log_prob(sentence,counts,smoothing,n,d,N){
     distinct characters in the corpus, and N for the total number of
     characters in the corpus, but these are also optional, to avoid
     some unnecessary computation.
+
+    The values n, d, and N can be obtained using the function corpus_info.
 
     If smoothing == 'laplace', then Laplace (add 1) smoothing is used.
     This is currently the only smoothing option, but I plan
@@ -74,7 +86,9 @@ function log_prob(sentence,counts,smoothing,n,d,N){
 
 
 module.exports = {
-    log_prob: log_prob
+    log_prob: log_prob,
+    corpus_info: corpus_info
 }
 
-},{}]},{},[1]);
+},{}]},{},[1])(1)
+});

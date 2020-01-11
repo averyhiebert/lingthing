@@ -14,7 +14,7 @@ possibly other smoothing options in the future).
 This package is a work-in-progress.
 
 ## Usage
-In node:
+In Node:
 ```javascript
 const lt = require('lingthing');
 const fs = require('fs');
@@ -28,6 +28,25 @@ log_probability = lt.log_prob(test_sentence,counts,"laplace",
 
 console.log("Probability of sentence '" + test_sentence + "' is " 
     + Math.exp(log_probability));
+```
+
+In the browser:
+```html
+    <script src="lingthing-browser-0.0.1.js"></script>
+    <script src="ngrams.js"></script> <!-- Or load the JSON data however you
+        want, e.g. XMLHttpRequest  -->
+    <script type="text/javascript">
+        // Note: importing the browser script is equivalent to:
+        // var lingthing = require('lingthing');
+
+        test_sentence = "Test sentence."
+        info = lingthing.corpus_info(counts)
+        log_probability = lingthing.log_prob(test_sentence,counts,"laplace",
+            info.n,info.d,info.N);
+
+        console.log("Probability of sentence '" + test_sentence + "' is " 
+            + Math.exp(log_probability));
+    </script>
 ```
 
 ## Building

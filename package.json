@@ -4,7 +4,7 @@
   "description": "Character-level ngram-based language modeling",
   "main": "src/index.js",
   "scripts": {
-    "browser": "browserify src/index.js > \"dist/lingthing-browser-\"$npm_package_version\".js\""
+    "browser": "browserify src/index.js --standalone lingthing -o \"dist/lingthing-browser-\"$npm_package_version\".js\""
   },
   "repository": {
     "type": "git",
