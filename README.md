@@ -1,7 +1,7 @@
-# lingthing
+# lingthing ⚡
 
 A library for n-gram-based character-level language modeling in JavaScript,
-intended for use in the browser.
+intended for use in the browser.  Also an anagram for "lightning".
 
 A json file containing counts of n-grams in some training corpus can be
 created using the script `scripts/count_grams.py` (or you can use the
@@ -16,7 +16,7 @@ This package is a work-in-progress.
 ## Usage
 In node:
 ```javascript
-const lt = require('.');
+const lt = require('lingthing');
 const fs = require('fs');
 
 let counts = JSON.parse(fs.readFileSync('scripts/LOB_ngrams.json'));
