@@ -23,7 +23,7 @@ In Node:
 const lt = require('lingthing');
 const fs = require('fs');
 
-let counts = JSON.parse(fs.readFileSync('scripts/LOB_ngrams.json'));
+let counts = JSON.parse(fs.readFileSync('scripts/LOB_4grams.json'));
 
 test_sentence = "Test sentence."
 info = lt.corpus_info(counts)
