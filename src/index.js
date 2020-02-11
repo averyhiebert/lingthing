@@ -86,5 +86,6 @@ function log_prob(sentence,counts,smoothing,n,d,N){
 
 module.exports = {
     log_prob: log_prob,
-    corpus_info: corpus_info
+    corpus_info: corpus_info,
+    ngram_laplace_prob: ngram_laplace_prob
 }
